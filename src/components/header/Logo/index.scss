@@ -1,0 +1,26 @@
+.logo {
+  max-width: 100%;
+  a {
+    color: #ec8431;
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  img.logo {
+    width: 70px;
+    height: auto;
+    margin-right: 20px;
+  }
+
+  @media (max-width: 576px) {
+    a {
+      font-size: 37px;
+    }
+    img.logo {
+      width: 45px;
+      margin-right: 5px;
+    }
+  }
+}

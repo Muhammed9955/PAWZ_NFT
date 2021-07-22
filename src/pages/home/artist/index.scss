@@ -1,0 +1,63 @@
+.artists-wrapper {
+  margin-bottom: 80px;
+  padding: 30px;
+  background: #180f22;
+
+  h3 {
+    color: #24aae1;
+    font-weight: bold;
+  }
+
+  .artists {
+    // display: flex;
+    // flex-direction: row;
+    gap: 80px;
+  }
+}
+.artist-wrapper {
+  width: 233px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+  .profile {
+    width: 133px;
+    height: 122px;
+    background: url('../../../assets/images/team-shape.png');
+    background-size: cover;
+
+    .profile-block {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      margin: auto;
+      margin-top: 15px;
+
+      img {
+        border: none;
+      }
+    }
+  }
+
+  h4 {
+    font-weight: bold;
+    margin-top: 35px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px !important;
+    color: #00a0d2 !important;
+  }
+
+  // img {
+  //   width: 180px;
+  //   height: 180px;
+  //   margin-top: 30px;
+  //   margin-left: 15px;
+  //   background: #27a4dc;
+  //   border-radius: 50%;
+  // }
+}

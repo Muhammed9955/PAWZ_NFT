@@ -1,0 +1,108 @@
+.upload {
+  background: #fff;
+  color: #020206;
+  padding-top: 90px;
+  h2 {
+    font-size: 45px;
+    font-weight: bold;
+    background: linear-gradient(to right, #1e0835, #26a8df);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  label {
+    color: #512d77;
+    font-size: 28px;
+  }
+  .info-text {
+    &.secondary {
+      color: #020206;
+    }
+  }
+  .unlock,
+  .marketplace {
+    display: flex;
+    justify-content: space-between;
+  }
+  .tags {
+    display: flex;
+    gap: 10px;
+    .tag {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 4px;
+      align-items: center;
+      padding: 30px;
+      color: #020206;
+      width: 200px;
+      height: 200px;
+      font-weight: bold;
+      font-size: 24px;
+      border: 1px solid;
+      border-image-slice: 1;
+      border-width: 3px;
+      border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+      cursor: pointer;
+      h4 {
+        font-weight: 600;
+      }
+      svg path {
+        color: #28a4dd;
+      }
+    }
+  }
+  .file-box {
+    border: 1px dotted;
+    .file-overlay {
+      justify-content: space-around;
+    }
+  }
+  .file-container {
+    height: 300px;
+    width: 100%;
+    margin-bottom: 60px;
+    background: var(--primary);
+    border-radius: 8px;
+  }
+
+  .fee {
+    padding: 25px 0px;
+  }
+  .submit {
+    margin: 60px 0;
+    button {
+      padding: 12px 80px;
+      font-weight: bold;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .file-container {
+      height: 125px;
+    }
+    .file-box {
+      border-radius: 0px;
+
+      .file-overlay {
+        padding: 10px;
+
+        p {
+          margin: 0;
+          font-size: 13px;
+        }
+      }
+      .file-buttton {
+        padding: 0px 20px;
+
+        img {
+          width: 15px;
+        }
+      }
+    }
+  }
+}

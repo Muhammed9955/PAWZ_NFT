@@ -1,0 +1,96 @@
+@import '../../utils/styles/_mixins.scss';
+
+.main-footer {
+  background: url('../../assets/images/footer-bg.png');
+  color: #fff;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-weight: 300;
+  position: relative;
+  @include boxShadow(3px, 0px, 6px);
+
+  .container {
+    // margin-bottom: 120px;
+
+    .logo a {
+      font-size: 50px;
+    }
+
+    .social-buttons {
+      flex-direction: column;
+      color: #fff;
+      margin-right: -8px;
+      a {
+        color: white;
+      }
+    }
+    .logo a {
+      font-size: 50px;
+    }
+
+    .info-text.primary,
+    li a {
+      color: #fff;
+      line-height: 2;
+      font-size: 18px;
+    }
+
+    h4 {
+      margin-top: 10px;
+      margin-bottom: 32px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .button-group {
+      margin-top: 20px;
+      button {
+        padding: 15px 12px;
+        font-size: 12px;
+        font-family: sans-serif;
+
+        &.button-group__right {
+          background: #64379494 !important;
+        }
+
+        &.button-group__left {
+          background: #28a4dd82;
+        }
+      }
+    }
+  }
+
+  .copy-right {
+    padding: 15px 0px;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: #0b0135;
+  }
+
+  @media (max-width: 576px) {
+    .main-footer .col-12 {
+      text-align: center !important;
+    }
+    .logo {
+      a {
+        font-size: 37px !important;
+        justify-content: center;
+      }
+    }
+    .social-buttons {
+      align-items: flex-end;
+    }
+    .button-group {
+      button {
+        padding: 10px 5px !important;
+        font-size: 11px !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.user-edit {
+  background: #fff;
+  p {
+    &.primary {
+      color: #020206;
+    }
+  }
+  .container {
+    margin-top: -88px;
+  }
+  p.lg {
+    font-size: 36px;
+  }
+  p.md {
+    font-size: 20px;
+  }
+  .banner {
+    height: 300px;
+    overflow: hidden;
+    margin: 0px;
+
+    .file-box {
+      border-radius: 0px;
+
+      .file-overlay {
+        justify-content: space-around;
+      }
+
+      .file-buttton {
+        padding: 10px 50px;
+        img {
+          width: 15px;
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .user-block {
+    @media (min-width: 576px) {
+      .profile-block {
+        width: 170px;
+        height: 170px;
+
+        .tick-icon {
+          width: 32px;
+          height: 32px;
+          bottom: -4px;
+          right: -10px;
+        }
+      }
+    }
+    .icon-button {
+      margin-top: -8px;
+      img {
+        height: 13px;
+        width: 13px;
+      }
+    }
+    .social-buttons {
+      margin: unset;
+    }
+  }
+
+  .socials {
+    .row {
+      .info-text {
+        line-height: 0.8;
+      }
+    }
+    .details {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .banner {
+      height: 120px;
+
+      .file-buttton {
+        padding: 0px 20px !important;
+      }
+    }
+    .user-block {
+      .profile-file-overlay {
+        margin-left: -3px;
+        padding: 10px;
+
+        .profile-file-buttton {
+          padding: 0px 8px;
+          line-height: 1;
+        }
+      }
+    }
+    .container {
+      margin-top: -40px;
+    }
+    .username {
+      font-size: 40px;
+
+      img {
+        width: 40px;
+      }
+    }
+    .nav-item {
+      font-size: 16px !important;
+    }
+    .product-card {
+      .header {
+        img {
+          height: 280px;
+        }
+      }
+    }
+    .file-box {
+      border-radius: 0px;
+
+      .file-overlay {
+        padding: 10px;
+
+        p {
+          margin: 0;
+          font-size: 13px;
+        }
+      }
+      .file-buttton {
+        padding: 0px 20px;
+
+        img {
+          width: 15px;
+        }
+      }
+    }
+  }
+}

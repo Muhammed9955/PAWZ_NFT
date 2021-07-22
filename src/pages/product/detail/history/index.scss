@@ -1,0 +1,30 @@
+.product-history {
+  display: flex;
+  flex-direction: column;
+  background: #f5f6fa;
+  color: #54317a;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  gap: 10px;
+  h3 {
+    padding: 15px 0px 0px 15px;
+  }
+  .history-item {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px 0px;
+    &:nth-child(n) {
+      background-color: #26a7e0;
+    }
+    &:nth-child(2n) {
+      background-color: #512d77;
+    }
+    .avatar img {
+      width: 48px;
+      border-radius: 50% !important;
+    }
+  }
+}

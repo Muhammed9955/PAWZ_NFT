@@ -1,0 +1,12 @@
+.social-buttons {
+  div {
+    padding: 5px 10px;
+    width: fit-content;
+
+    &:hover {
+      cursor: pointer;
+      background: #0000006b;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@import '../../../utils/styles/mixins';
+
+.creator-card {
+  background-color: #142b40;
+  width: 340px;
+  margin-bottom: 60px !important;
+  color: #6f6f6f;
+  @include boxShadow(0px, 3px, 40px);
+  cursor: pointer;
+  padding: 0px;
+  border-radius: 20px;
+  .followers {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  &:hover {
+    transform: scale(1.01);
+    @include boxShadow(0px, 3px, 40px, 3px, #000);
+  }
+  .button-group {
+    .button-group__left {
+      background: #1b5678;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .button-group__right {
+      background: #3b4986;
+      color: #fff;
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+  .user-info {
+    display: flex;
+    padding: 10px 20px;
+    position: relative;
+    justify-content: space-between;
+    .user-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .handle {
+      color: #25aae1;
+    }
+    .profile {
+      position: absolute;
+      left: 112px;
+      top: -75px;
+      .profile-block {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+  .info {
+    padding: 0px 20px;
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .header {
+    margin: 0px;
+    position: relative;
+    .profile .profile-block {
+      width: 55px;
+      height: 55px;
+      .tick-icon {
+        width: 12px;
+        height: 12px;
+        bottom: 2px;
+        right: 4px;
+      }
+    }
+    .card-img-top {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      height: 330px;
+    }
+    p.sm {
+      font-size: 12px;
+    }
+    p.md {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+
+  .card-footer {
+    padding: 10px 7px;
+    margin-top: 0px;
+    p {
+      font-size: 18px;
+    }
+    .btn-curve {
+      border-bottom-right-radius: 20px;
+      @include boxShadow(0px, 3px, 10px, 0px, #1a1b1d);
+    }
+  }
+}
