@@ -18,12 +18,13 @@ import { Web3Provider } from '@ethersproject/providers';
 import { truncateWalletString } from '../../../utils/index';
 import moment from 'moment';
 import ExternalViewLink from 'components/ExternViewLink';
-
+import { ReactComponent as Edit } from '../../../assets/edit.svg';
 const XProfileDetail = ({
   match: {
     params: { walletAddress },
   },
 }: RouteComponentProps<{ walletAddress: string }>) => {
+  const arr = [1, 2, 3, 4, 5, 6];
   const history = useHistory();
   let data = useLocation().state;
   const [loginStatus, setLoginStatus] = useState(false);
@@ -46,49 +47,49 @@ const XProfileDetail = ({
 
   return (
     <div className="profile-detail">
-      <Row className="banner">
-        <Image src={nftUserFullDetail?.user_profile?.userBackgroupUrl || '/img/c-bg-1.png'} fluid />
-      </Row>
-      <Container>
+      <Container style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
         <div className="user-block">
           <ProfileImage img={nftUserFullDetail?.user_profile?.userAvatarUrl} />
-
           {profile?.walletAddress.toLowerCase() === walletAddress.toLowerCase() && (
             <Link to="/profile/edit" className="align-self-end">
               <InfoText size="md" variant="secondary" className="d-inline-block m-0 edit-profile-link">
-                <Image className="lang mb-2" src="/img/edit.svg" /> Edit profile
+                {/* <Image className="lang mb-2" src="/img/edit.svg" />  */}
+                <Edit className="edit-icon-svg" fill="white" />
+                Edit profile
               </InfoText>
             </Link>
           )}
         </div>
         <Row className="user-details">
-          <Col xl="4" md="4" className="user-info">
-            <Row>
-              <Col xs="9" className="pr-0">
-                <h2 className="m-0 w-100 text-truncate username">
-                  {nftUserFullDetail.user_profile.username || truncateWalletString(walletAddress)}
-                </h2>
-              </Col>
-              <Col xs="3"> {true && <Image src="/img/shield.png" />}</Col>
-            </Row>
-
+          <div className="user-info">
+            <div className="user-name-img">
+              <h2 className="username">
+                {nftUserFullDetail.user_profile.username || truncateWalletString(walletAddress)}
+              </h2>
+              {true && <Image src="/img/shield.png" />}
+            </div>
+            <p className="joined">
+              Joined {moment(nftUserFullDetail.user_profile.accountCreatedAt).format('MMM yyyy')}
+            </p>
             <h3>Bio</h3>
-            <InfoText variant="secondary" size="md" className="m-0">
+            <InfoText variant="secondary" size="md" className="m-0 bio-text-field">
               {nftUserFullDetail.user_profile.userBio}
+            </InfoText>
+            <br />
+            <h3>Links</h3>
+            <InfoText variant="secondary" size="md" className="m-0 bio-text-field">
+              <SocialButtons profile={nftUserFullDetail.user_profile} />
             </InfoText>
             {/* <h3>Link</h3>
             <InfoText variant="secondary" size="md" className="m-0">
               {nftUserFullDetail.user_profile.socialUrl}
             </InfoText> */}
-            <InfoText variant="secondary" size="md" className="joined m-10">
-              Joined {moment(nftUserFullDetail.user_profile.accountCreatedAt).format('MMM yyyy')}
-            </InfoText>
-            <SocialButtons profile={nftUserFullDetail.user_profile} />
+
             {/* <ExternalViewLink eitherLink="" IPFSLink="" metadata="" /> */}
-          </Col>
-          <Col className="mt-5" xl="8" md="8">
+          </div>
+          <div className="profile-nav-items">
             <Tab.Container defaultActiveKey="collection">
-              <Nav>
+              <Nav className="nav-item-container">
                 <Nav.Item>
                   <Nav.Link eventKey="collection" className="title-font">
                     Collection
@@ -149,7 +150,12 @@ const XProfileDetail = ({
                 </Tab.Pane>
               </Tab.Content>
             </Tab.Container>
-          </Col>
+            <div className="created-cards-container">
+              {arr.map((item, indx) => (
+                <div className="profile-cards">{item}</div>
+              ))}
+            </div>
+          </div>
         </Row>
       </Container>
     </div>

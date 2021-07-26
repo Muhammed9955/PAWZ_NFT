@@ -37,7 +37,7 @@ const DragDrop: React.FC = () => {
         <p className="upload-tag">Drag & Drop or click to browse.</p>
       </div>
       <div className="image-preview">{images}</div>
-      <button className="confirm-upload">Confirm Upload</button>
+      {/* <button className="confirm-upload">Confirm Upload</button> */}
     </div>
   );
 };

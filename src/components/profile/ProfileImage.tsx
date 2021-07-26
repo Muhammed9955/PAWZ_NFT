@@ -18,9 +18,8 @@ const ProfileImage = (props: ProfileImageProps) => {
   return (
     <div className={`profile`}>
       <div className="profile-block">
-        <Image className="profile-img" src={fileImg} />
+        <img className="profile-img" src={fileImg} />
         {props.verified === true && <Image className="tick-icon" src="/img/tick.svg" />}
-
         {props.edit && (
           <div className="profile-file-overlay">
             <label className="profile-file-buttton" htmlFor="profile-file-input">

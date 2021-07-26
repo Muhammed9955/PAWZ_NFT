@@ -16,6 +16,7 @@ import { Toaster } from 'react-hot-toast';
 import ScrollToTop from 'utils/scrollToTop';
 import ProfileDetail from 'pages/profile/detail/Profile';
 import Mint from 'pages/Mint/Mint';
+import XProfileDetail from 'pages/profile/detail';
 
 function App() {
   useEagerConnect();
@@ -34,7 +35,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/profile/edit" component={ProfileEdit} />
-              <Route exact path="/creatorDetail/:walletAddress" component={ProfileDetail} />
+              <Route exact path="/creatorDetail/:walletAddress" component={XProfileDetail} />
               <Route exact path="/upload" component={Upload} />
               <Route exact path="/mint" component={Mint} />
               <Route exact path="/details/:id" component={ProductDetails} />
