@@ -104,7 +104,7 @@ const HomePage = () => {
       <div style={{ width: '90%', margin: '0 auto' }}>
         <h2>Explore</h2>
         <div className="trending-auctions">
-          <SearchBar />
+          {/* <SearchBar /> */}
           {NFTObjectList.map(item => (
             <ProductCard product={item} onClick={() => console.log('card clicked !', item)} />
           ))}
