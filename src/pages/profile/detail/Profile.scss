@@ -1,0 +1,62 @@
+.prfile-details {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #3c7d9e;
+  margin: 0 auto;
+  margin-top: 119px;
+  outline: none;
+  border: none;
+}
+.profile-detail-img {
+  width: 281px;
+  margin-top: -8%;
+  height: 281px;
+  border-radius: 100%;
+  background: white;
+}
+.profile-user-name {
+  color: #ffe640;
+  font-size: 30px;
+  font-weight: 300;
+}
+.bio-input {
+  width: 80%;
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid #ffffff;
+  margin: 0 auto;
+  margin-bottom: 112.5px;
+  padding-bottom: 2vh;
+}
+.bio-input::placeholder {
+  color: white;
+  font-size: 20px;
+  width: 90%;
+}
+.created-collected {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 30px;
+}
+.checked {
+  color: #36ffff;
+}
+.created-cards-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.profile-cards {
+  background: #5194b5;
+  width: 462px;
+  margin-bottom: 4vh;
+  height: 537px;
+}

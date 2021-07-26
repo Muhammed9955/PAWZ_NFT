@@ -1,0 +1,55 @@
+.drag-drop {
+  border: 2px solid yellow;
+  width: 83%;
+  height: 857px;
+  margin: 0 auto;
+  background: rgb(33, 92, 131);
+  border-radius: 25px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   justify-content: center;
+}
+.upload-arrow {
+  position: relative;
+  width: 30px;
+  margin-top: 5vh;
+  fill: white;
+}
+.upload-slogan {
+  margin-top: 10vh;
+  font-size: 35px;
+  font-weight: bold;
+  color: gold;
+}
+.upload-details,
+.upload-tag {
+  font-size: 18px;
+  color: white;
+}
+.upload-tag {
+  margin-top: 15vh;
+}
+.image-preview {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2vh;
+  height: 27vh;
+  //   margin-bottom: 2vh;
+}
+.confirm-upload {
+  width: 26%;
+  height: 117px;
+  border: none;
+  outline: none;
+  background-color: #ffe640;
+  color: #231e68;
+  margin: 0 auto;
+  border-radius: 42px;
+}
+@media only screen and (max-width: 768px) {
+  .name-step {
+    font-size: 30px;
+  }
+}

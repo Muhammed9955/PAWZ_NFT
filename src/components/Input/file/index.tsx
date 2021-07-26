@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Image } from 'react-bootstrap';
 import { FileInputProps } from 'Type';
 import './index.scss';
+import { useDropzone } from 'react-dropzone';
 
 const FileInput = ({ info, label, dispalyImage, defaultImage, onChange }: FileInputProps) => {
   const [fileImg, setFileImg] = useState<string>(defaultImage);

@@ -49,7 +49,13 @@ export default function UserDropDown(props: UserDropDownProps) {
             </Col> */}
           </Row>
           <Row className="msg-block">
-            <a href="https://academy.binance.com/en/articles/how-to-get-started-with-binance-smart-chain-bsc" target="_blank" className="icon-links">Learn how to top-up your BSC wallet with BNB</a>
+            <a
+              href="https://academy.binance.com/en/articles/how-to-get-started-with-binance-smart-chain-bsc"
+              target="_blank"
+              className="icon-links"
+            >
+              Learn how to top-up your BSC wallet with BNB
+            </a>
           </Row>
 
           <Link to={`/creatorDetail/${props.walletAddress}`} className="icon-link">
@@ -72,7 +78,8 @@ export default function UserDropDown(props: UserDropDownProps) {
       }
       rootClose
     >
-      <Button label={BtnLabel()} gradientDir="left" variant="primary" />
+      <button className="connect-header balance">{BtnLabel()}</button>
+      {/* <Button label={BtnLabel()} gradientDir="left" variant="primary" /> */}
     </OverlayTrigger>
   );
 }

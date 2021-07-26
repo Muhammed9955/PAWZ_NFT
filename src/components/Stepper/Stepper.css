@@ -1,0 +1,46 @@
+.stepper-bar {
+  margin: 282px auto 252px auto;
+  width: 53.75%;
+  height: 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #ffe0ff;
+}
+.stepper-roller {
+  display: block;
+  top: -15px;
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background-color: #ffe640;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  transition: all 0.2s;
+}
+.stepper-roller.mint {
+  transform: translateX(27vw);
+}
+.stepper-roller.list {
+  transform: translateX(52vw);
+}
+.steps-names {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+}
+.name-step {
+  color: white;
+  font-size: 45px;
+}
+.name-step.upload_style,
+.name-step.mint,
+.name-step.list {
+  color: #36ffff;
+}
+@media only screen and (max-width: 768px) {
+  .name-step {
+    font-size: 30px;
+  }
+}

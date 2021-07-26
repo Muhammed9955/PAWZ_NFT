@@ -14,6 +14,7 @@ import { useHistory } from 'react-router';
 import Artist from './artist';
 import { Home_List } from './constant';
 import { useGetNFTList, NFTObjectData } from '../../hooks/useApi';
+import SearchBar from 'components/SearchBar/SearchBar';
 
 const HomePage = () => {
   const [isFilterModal, setFilterModal] = useState(false);
@@ -66,34 +67,50 @@ const HomePage = () => {
   function renderLoadMore() {
     if (items?.total_count > NFTObjectList.length) {
       return (
-        <Row>
-          <Col className="text-center load-more-action">
-            <Button
-              label="Load More"
-              variant="primary"
-              onClick={loadMoreItem}
-              isLoading={loading}
-              loadingMessage="Loading..."
-            />
-          </Col>
-        </Row>
+        <Col className="text-center load-more-action">
+          <Button
+            label="Load More"
+            variant="primary"
+            onClick={loadMoreItem}
+            isLoading={loading}
+            loadingMessage="Loading..."
+          />
+        </Col>
       );
     }
   }
   return (
     <div className="home-page">
       <HomeHeader />
-      <Container>
-        <Category title="">
-          <Row className="category--item">
+      {/* <Container style={{ margin: '0', padding: '0' }}> */}
+      {/* <Row className="category--item">
             {NFTObjectList.map(item => (
               <Col xl="4" md="4">
                 <ProductCard product={item} onClick={() => console.log('card clicked !', item)} />
               </Col>
             ))}
-          </Row>
-        </Category>
-      </Container>
+          </Row> */}
+      <div style={{ width: '90%', margin: '0 auto' }}>
+        <li>TRENDING AUCTIONS</li>
+        <div className="trending-auctions">
+          {NFTObjectList.map(item => (
+            <ProductCard product={item} onClick={() => console.log('card clicked !', item)} />
+          ))}
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div style={{ width: '90%', margin: '0 auto' }}>
+        <h2>Explore</h2>
+        <div className="trending-auctions">
+          <SearchBar />
+          {NFTObjectList.map(item => (
+            <ProductCard product={item} onClick={() => console.log('card clicked !', item)} />
+          ))}
+        </div>
+      </div>
+      {/* </Container> */}
       {/* <div className="creators">
         <Container>
           <Category title="Feature creators">
@@ -116,7 +133,7 @@ const HomePage = () => {
         </Container>
       </div> */}
       {renderLoadMore()}
-      <Artist />
+      {/* <Artist /> */}
     </div>
   );
 };

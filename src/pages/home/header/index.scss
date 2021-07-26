@@ -1,7 +1,6 @@
 @import '../../../utils/styles/mixins';
 
 .home-header-card {
-  background: url('../../../assets/images/home-header-bg.png');
   background-size: cover;
   margin: auto;
   color: #6f6f6f;
@@ -19,7 +18,7 @@
     line-height: 1.2;
     text-align: center;
     padding-top: 100px;
-    color: #ec8431;
+    color: #ffcce4;
     font-size: 52px;
     font-family: 'Berkshire Swash';
   }

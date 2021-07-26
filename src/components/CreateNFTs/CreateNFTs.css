@@ -1,0 +1,36 @@
+.create-nfts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffcce4;
+}
+.create-nfts h1 {
+  margin-bottom: 5vh;
+  font-size: 84px;
+}
+.image-upload,
+.video-upload {
+  border: 1px solid #ffe640;
+  width: 371px;
+  border-radius: 63px;
+  height: 497px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image-upload h2,
+.video-upload h2 {
+  font-size: 84px;
+}
+.image-upload svg,
+.video-upload svg {
+  width: 176.6px;
+  height: 117.73px;
+}
+.multi-media {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}

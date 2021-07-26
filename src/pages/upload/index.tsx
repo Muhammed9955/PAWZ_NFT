@@ -21,6 +21,7 @@ import toast from 'react-hot-toast';
 import API from 'utils/api';
 import { mint } from 'utils/contracts';
 import { ethers } from 'ethers';
+import DragDrop from 'components/DragDrop';
 
 function Upload() {
   const history = useHistory();
@@ -127,8 +128,7 @@ function Upload() {
       </Row>
       <Row>
         <Col xs="12" sm={{ span: 8, offset: 2 }}>
-          <label className=" mt-2">Upload File</label>
-          <div className="file-container mt-2">
+          {/* <div className="file-container mt-2">
             <FileInput
               label="Upload File"
               dispalyImage
@@ -136,7 +136,10 @@ function Upload() {
               onChange={onBannerChange}
               defaultImage={nftImage && URL.createObjectURL(nftImage)}
             />
-          </div>
+          </div> */}
+
+          {/* this is the component for dragging and dropping the images in*/}
+          <DragDrop />
 
           {/* <div className="fee">
             <Row>

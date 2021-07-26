@@ -2,7 +2,7 @@
 
 .product-card {
   background-color: var(--primary);
-  width: 100%;
+  width: 350px;
   margin-bottom: 60px !important;
   color: #6f6f6f;
   @include boxShadow(0px, 3px, 40px);

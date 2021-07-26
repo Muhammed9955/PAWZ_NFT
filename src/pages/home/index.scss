@@ -1,10 +1,23 @@
 .home-page {
   margin-bottom: 120px;
   .creators {
-    background: #121524;
     h3 {
       color: #24aae1;
       font-weight: bold;
     }
   }
+}
+.home-page h2,
+.home-page li {
+  color: #ffe640;
+  font-size: 30px;
+}
+.trending-auctions {
+  background: #3c7d9e;
+  // width: 100vw;
+  display: flex;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 5vh 2vw;
 }

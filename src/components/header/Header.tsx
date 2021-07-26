@@ -70,11 +70,16 @@ const Header = () => {
             <Nav.Item>
               <div className="connection-action">
                 {!(loginStatus && profile) && (
-                  <Button label="Connect Wallet" variant="outline-primary" onClick={login} />
+                  <button className="connect-header" onClick={login}>
+                    Connect
+                  </button>
+                  // <Button label="Connect Wallet" variant="outline-primary" onClick={login} />
                 )}
                 {loginStatus && profile && (
                   <div className="connect-action">
-                    <Button label="CREATE" gradientDir="right" variant="primary" onClick={goToUpload} />
+                    <button className="connect-header create" onClick={goToUpload}>
+                      CREATE
+                    </button>
                     <UserDropDown
                       userName={userName}
                       userAvatar={userAvatar}

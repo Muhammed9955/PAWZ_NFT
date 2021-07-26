@@ -19,7 +19,7 @@ import { truncateWalletString } from '../../../utils/index';
 import moment from 'moment';
 import ExternalViewLink from 'components/ExternViewLink';
 
-const ProfileDetail = ({
+const XProfileDetail = ({
   match: {
     params: { walletAddress },
   },
@@ -155,4 +155,4 @@ const ProfileDetail = ({
     </div>
   );
 };
-export default ProfileDetail;
+export default XProfileDetail;

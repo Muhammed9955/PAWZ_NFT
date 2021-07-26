@@ -1,5 +1,22 @@
 @import '../../utils/styles/_mixins.scss';
-
+.connect-header {
+  background: #ffe640;
+  outline: none;
+  border: none !important;
+  color: #231e68;
+  font-weight: bolder;
+  font-size: 16px;
+  width: 211px;
+  height: 54px;
+}
+.create {
+  width: 116px;
+  height: 42px;
+}
+.balance {
+  width: 191px;
+  height: 45.5px;
+}
 .header-nav {
   @media (max-width: 576px) {
     padding: 0px 15px !important;
@@ -10,7 +27,6 @@
   }
 
   &.navbar {
-    background-image: url('../../assets/images/header-bg.png');
     background-size: cover;
     padding: 0px 0px;
     min-height: 120px;

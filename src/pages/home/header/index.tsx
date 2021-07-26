@@ -24,10 +24,10 @@ const HomeHeader = () => {
     <div className="mb-10">
       <div className="home-header-card">
         <InfoText size="lg" className="home-header-text mb-5">
-          The first of NFT marketplace on <br /> Binance Smart Chain
+          Welcome To PAWZ Marketplace!
         </InfoText>
         <InfoText size="xl" className="sub-heading text-center">
-          Fast transaction speed, low transaction fees, powerful reward tokens
+          A market made for $PAWZ, by paws!
         </InfoText>
       </div>
     </div>
