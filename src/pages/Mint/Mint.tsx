@@ -11,7 +11,7 @@ const Mint: React.FC = () => {
     <div className="mint-page">
       <Stepper state={state} />
       {state === 'upload' ? (
-        <DragDrop setstate={setstate} />
+        <DragDrop />
       ) : state === 'mint' ? (
         <NFTDescription setstate={setstate} />
       ) : (

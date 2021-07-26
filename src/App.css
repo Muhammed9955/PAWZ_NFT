@@ -25,12 +25,13 @@
   min-height: 350px;
 }
 
-.backdrop-image2 {
+.app {
   background-image: url('./assets/images/online.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   z-index: -1;
+  width: 100vw;
   position: absolute;
   height: auto;
 }

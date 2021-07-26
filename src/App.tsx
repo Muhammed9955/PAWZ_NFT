@@ -26,23 +26,23 @@ function App() {
     <>
       <Toaster position="top-center" toastOptions={{ success: { duration: 3000 }, error: { duration: 3000 } }} />
       <div className="app">
-        <div className="backdrop-image2">
-          <Router basename={process.env.PUBLIC_URL}>
-            <ScrollToTop />
-            <Header />
-            <div className="body">
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/profile/edit" component={ProfileEdit} />
-                <Route exact path="/creatorDetail/:walletAddress" component={ProfileDetail} />
-                <Route exact path="/upload" component={Upload} />
-                <Route exact path="/mint" component={Mint} />
-                <Route exact path="/details/:id" component={ProductDetails} />
-              </Switch>
-            </div>
-            <Footer />
-          </Router>
-        </div>
+        {/* <div className="backdrop-image2"> */}
+        <Router basename={process.env.PUBLIC_URL}>
+          <ScrollToTop />
+          <Header />
+          <div className="body">
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/profile/edit" component={ProfileEdit} />
+              <Route exact path="/creatorDetail/:walletAddress" component={ProfileDetail} />
+              <Route exact path="/upload" component={Upload} />
+              <Route exact path="/mint" component={Mint} />
+              <Route exact path="/details/:id" component={ProductDetails} />
+            </Switch>
+          </div>
+          <Footer />
+        </Router>
+        {/* </div> */}
       </div>
     </>
   );
