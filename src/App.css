@@ -24,25 +24,15 @@
 .body {
   min-height: 350px;
 }
-.backdrop-image,
+
 .backdrop-image2 {
-  background-image: url('./assets/images/Image1.png');
-  position: absolute;
-  z-index: -1;
-  background-color: transparent;
+  background-image: url('./assets/images/online.png');
   background-size: cover;
-  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  width: 100vw;
-  height: 1350px;
-}
-.backdrop-image2 {
-  top: 1350px;
-  height: 100%;
+  z-index: -1;
   position: absolute;
-  min-height: 100%;
   height: auto;
-  background-image: url('./assets/images/Image2.png');
 }
 body {
   background: #3498b2 !important;
