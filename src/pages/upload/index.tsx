@@ -22,6 +22,10 @@ import API from 'utils/api';
 import { mint } from 'utils/contracts';
 import { ethers } from 'ethers';
 import DragDrop from 'components/DragDrop';
+import CreateNFTs from 'components/CreateNFTs/CreateNFTs';
+import Stepper from 'components/Stepper/Stepper';
+import NFTDescription from 'components/NFTDescription/NFTDescription';
+import List from 'components/List/List';
 
 function Upload() {
   const history = useHistory();
@@ -33,6 +37,8 @@ function Upload() {
   const [nftDecription, setNFTDecription] = useState('');
   const [nftPrice, setNFTPrice] = useState('');
   const [isLoading, setLoadingStatus] = useState(false);
+  const [imageVideo, setImageVideo] = useState(false);
+  const [steps, setSteps] = useState('');
   const { register, handleSubmit } = useForm();
 
   const onBannerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,6 +59,7 @@ function Upload() {
   const onChangeNFTPrice = value => {
     setNFTPrice(value);
   };
+  console.log(nftImage);
 
   const submitAsset = async () => {
     if (!nftImage) {
@@ -121,14 +128,39 @@ function Upload() {
 
   return (
     <div className="upload">
-      <Row>
+      {/* <Row>
         <Col className="text-center">
           <h2 className="page-heading">Create single Collectible</h2>
         </Col>
-      </Row>
-      <Row>
-        <Col xs="12" sm={{ span: 8, offset: 2 }}>
-          {/* <div className="file-container mt-2">
+      </Row> */}
+      <div>
+        {!imageVideo ? (
+          <CreateNFTs setSteps={setSteps} setImageVideo={setImageVideo} />
+        ) : (
+          imageVideo && <Stepper setSteps={setSteps} steps={steps} />
+        )}
+        {steps === 'upload' ? (
+          <DragDrop
+            nftImage={nftImage}
+            setSteps={setSteps}
+            onChange={onBannerChange}
+            dispalyImage
+            setNFTImage={setNFTImage}
+            defaultImage={nftImage && URL.createObjectURL(nftImage)}
+          />
+        ) : steps === 'mint' ? (
+          <NFTDescription
+            setSteps={setSteps}
+            onChangeNFTDescription={onChangeNFTDescription}
+            onChangeNFTName={onChangeNFTName}
+          />
+        ) : (
+          steps === 'list' && (
+            <List onChangeNFTPrice={onChangeNFTPrice} isLoading={isLoading} submitAsset={submitAsset} />
+          )
+        )}
+
+        {/* <div className="file-container mt-2">
             <FileInput
               label="Upload File"
               dispalyImage
@@ -138,10 +170,10 @@ function Upload() {
             />
           </div> */}
 
-          {/* this is the component for dragging and dropping the images in*/}
-          <DragDrop />
+        {/* this is the component for dragging and dropping the images in*/}
+        {/* <DragDrop /> */}
 
-          {/* <div className="fee">
+        {/* <div className="fee">
             <Row>
               <Col sm="12" xl="6" lg="12" className="text-left">
                 <InfoText size="md" variant="secondary">
@@ -153,29 +185,31 @@ function Upload() {
               </Col>
             </Row>
           </div> */}
-          <form>
-            <Input placeholder="NFT Name" label="" name="nft_name" onChange={onChangeNFTName} />
-            <label>Description (Optional)</label>
-            <textarea
-              placeholder="NFT Description (max: 300 characters)"
-              name="nft_description"
-              onChange={onChangeNFTDescription}
-            />
-            <Input
-              type="number"
-              placeholder="NFT Price"
-              label=""
-              name="nft_price"
-              postfix="BNB"
-              onChange={onChangeNFTPrice}
-            />
-          </form>
-
-          <div className="submit text-center text-sm-left">
-            <Button label="Create item" variant="primary" isLoading={isLoading} onClick={submitAsset} />
-          </div>
-        </Col>
-      </Row>
+        {
+          // <form>
+          //   <Input placeholder="NFT Name" label="" name="nft_name" onChange={onChangeNFTName} />
+          //   <label>Description (Optional)</label>
+          //   <textarea
+          //     placeholder="NFT Description (max: 300 characters)"
+          //     name="nft_description"
+          //     onChange={onChangeNFTDescription}
+          //   />
+          //   <Input
+          //     type="number"
+          //     placeholder="NFT Price"
+          //     label=""
+          //     name="nft_price"
+          //     postfix="BNB"
+          //     onChange={onChangeNFTPrice}
+          //   />
+          // </form>
+        }
+        {
+          // <div className="submit text-center text-sm-left">
+          //   <Button label="Create item" variant="primary" isLoading={isLoading} onClick={submitAsset} />
+          // </div>
+        }
+      </div>
     </div>
   );
 }

@@ -18,6 +18,10 @@ import toast from 'react-hot-toast';
 import { readFileAsync, getImageIpfsHash } from '../../../utils/ipfs';
 import API from 'utils/api';
 import { truncateWalletString } from '../../../utils/index';
+import { ReactComponent as Twitter } from '../../../assets/twitter.svg';
+import { ReactComponent as Instagram } from '../../../assets/instagram.svg';
+import { ReactComponent as Telegram } from '../../../assets/telegram.svg';
+import { ReactComponent as Youtube } from '../../../assets/youtube.svg';
 
 export default function ProfileEdit() {
   const [loginStatus, setLoginStatus] = useState(false);
@@ -32,12 +36,12 @@ export default function ProfileEdit() {
 
   const Socials = [
     // { label: 'Website', icon: '/img/earth.svg', value: profile && profile.websiteUrl },
-    { label: 'Twitter', icon: '/img/social/twitter.svg', value: profile && profile.twitterUrl },
-    { label: 'Instagram', icon: '/img/social/instagram.svg', value: profile && profile.instagramUrl },
-    { label: 'Telegram', icon: '/img/social/telegram.svg', value: profile && profile.telegramUrl },
+    { label: 'Twitter', icon: <Twitter className="social-icon-svg" />, value: profile && profile.twitterUrl },
+    { label: 'Instagram', icon: <Instagram className="social-icon-svg" />, value: profile && profile.instagramUrl },
+    { label: 'Telegram', icon: <Telegram className="social-icon-svg" />, value: profile && profile.telegramUrl },
 
     // { label: 'Discord', icon: '/img/social/discord.svg', value: profile && profile.discordUrl },
-    { label: 'Youtube', icon: '/img/social/youtube.svg', value: profile && profile.youtubeUrl },
+    { label: 'Youtube', icon: <Youtube className="social-icon-svg" />, value: profile && profile.youtubeUrl },
     // { label: 'Facebook', icon: '/img/social/facebook.svg', value: profile && profile.facebookUrl },
     // { label: 'TikTok', icon: '/img/social/tiktok.svg', value: profile && profile.tiktokUrl },
     // { label: 'Dribbble', icon: '/img/social/dribbble.svg', value: profile && profile.dribbleUrl },
@@ -137,9 +141,9 @@ export default function ProfileEdit() {
 
           <Row>
             <Col sm="4">
-              <InfoText size="lg" className="m-0 text-truncate">
+              <p className="username-edit-profile">
                 {profile && (profile.username || truncateWalletString(profile.walletAddress))}
-              </InfoText>
+              </p>
               <Row>
                 <Col xs="auto" className="pr-0">
                   <InfoText variant="secondary" size="md" className="mb-2">
@@ -154,7 +158,6 @@ export default function ProfileEdit() {
             </Col>
           </Row>
         </div>
-
         <form onSubmit={handleSubmit(onSubmit)} className="mt-5 pt-3 pb-3">
           <Row>
             <Col sm="5" className="text-center">
@@ -166,13 +169,9 @@ export default function ProfileEdit() {
                 Add Bio
               </InfoText>
               <textarea placeholder={profile?.userBio} {...register('user_bio', { required: false })} />
-              <Button
-                className="mt-3 d-none d-sm-block"
-                isLoading={loading}
-                type="submit"
-                variant="primary"
-                label="Save Changes"
-              />
+              <button className="save-changes-btn" disabled={loading} type="submit">
+                Save Changes
+              </button>
             </Col>
             <Col xs="1"></Col>
             <Col sm="6" className="socials text-center mt-5 mt-sm-0">
@@ -183,7 +182,7 @@ export default function ProfileEdit() {
               {Socials.map((social, index) => (
                 <Row key={index} className="align-items-end mb-3">
                   <Col xs="auto" sm="auto" className="mb-0">
-                    <img className="svg-img" src={social.icon} />
+                    {social.icon}
                   </Col>
                   <Col xs="auto" sm="2" className="pl-0 mb-0">
                     <InfoText size="md" className="m-0">
@@ -196,7 +195,8 @@ export default function ProfileEdit() {
                 </Row>
               ))}
               <Button
-                className="mt-3 d-sm-none"
+                saveChanges
+                className="mt-3 d-sm-none edit-profile-button"
                 isLoading={loading}
                 type="submit"
                 variant="primary"

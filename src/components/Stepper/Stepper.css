@@ -1,6 +1,6 @@
 .stepper-bar {
   margin: 282px auto 252px auto;
-  width: 53.75%;
+  width: 70.75%;
   height: 10px;
   border-radius: 20px;
   border: none;
@@ -20,10 +20,10 @@
   transition: all 0.2s;
 }
 .stepper-roller.mint {
-  transform: translateX(27vw);
+  transform: translateX(32.5vw);
 }
 .stepper-roller.list {
-  transform: translateX(52vw);
+  transform: translateX(62vw);
 }
 .steps-names {
   display: flex;

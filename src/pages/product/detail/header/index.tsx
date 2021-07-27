@@ -28,7 +28,7 @@ const ProductDetailHeader = ({ creatorBackgroupUrl, creatorAvatarUrl, creatorNam
             <Col>
               <Row>
                 <Col xs="8" className="pr-0">
-                  <h2 className="w-100 text-truncate">{creatorName}</h2>
+                  <h2 className="w-100 text-truncate user-creator-name">{creatorName}</h2>
                 </Col>
                 <Col xs="4">
                   <Image className="text-end-icon" src="/img/shield.png" />

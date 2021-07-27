@@ -1,5 +1,5 @@
 .user-edit {
-  background: #fff;
+  // background: #fff;
   p {
     &.primary {
       color: #020206;
@@ -14,9 +14,22 @@
   p.md {
     font-size: 20px;
   }
+  .save-changes-btn {
+    color: #231e68;
+    width: 127px;
+    height: 44px;
+    margin-top: 2vh;
+    left: -35%;
+    position: relative;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: #ffe640;
+  }
   .banner {
     height: 300px;
     overflow: hidden;
+    opacity: 0.5;
     margin: 0px;
 
     .file-box {
@@ -38,7 +51,36 @@
       width: 100%;
     }
   }
-
+  .info-text {
+    color: white;
+  }
+  .username-edit-profile {
+    color: white;
+    font-size: 36px;
+  }
+  .social-icon-svg,
+  .social-icon-svg,
+  .social-icon-svg,
+  .social-icon-svg {
+    fill: white;
+    width: 20px;
+    height: 20px;
+  }
+  .align-items-end p,
+  .text-center p,
+  .text-truncate {
+    color: white;
+  }
+  .align-items-end input,
+  .text-center textarea,
+  .text-center input {
+    background-color: transparent;
+    border-color: white;
+  }
+  .edit-profile-button {
+    color: #231e68;
+    background-color: #ffe640;
+  }
   .user-block {
     @media (min-width: 576px) {
       .profile-block {

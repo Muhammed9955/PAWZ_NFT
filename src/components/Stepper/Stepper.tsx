@@ -2,24 +2,37 @@ import React from 'react';
 import './Stepper.css';
 
 interface IProps {
-  state?: string;
+  steps?: string;
+  setSteps?: any;
 }
-const Stepper = ({ state }: IProps) => {
+const Stepper = ({ steps, setSteps }: IProps) => {
+  // const uploadSet = (): void => {
+  //   setSteps('upload');
+  // };
   return (
     <div className="stepper-bar">
       <span
         className={
-          state === 'upload'
+          steps === 'upload'
             ? 'stepper-roller'
-            : state === 'mint'
+            : steps === 'mint'
             ? 'stepper-roller mint'
-            : state === 'list' && 'stepper-roller list'
+            : steps === 'list' && 'stepper-roller list'
         }
       ></span>
       <div className="steps-names">
-        <span className={state === 'upload' ? 'name-step upload_style' : 'name-step'}>Upload</span>
-        <span className={state === 'mint' ? 'name-step mint' : 'name-step'}>Mint</span>
-        <span className={state === 'list' ? 'name-step list' : 'name-step'}>List</span>
+        <span
+          onClick={() => setSteps('upload')}
+          className={steps === 'upload' ? 'name-step upload_style' : 'name-step'}
+        >
+          Upload
+        </span>
+        <span onClick={() => setSteps('mint')} className={steps === 'mint' ? 'name-step mint' : 'name-step'}>
+          Mint
+        </span>
+        <span onClick={() => setSteps('list')} className={steps === 'list' ? 'name-step list' : 'name-step'}>
+          List
+        </span>
       </div>
     </div>
   );

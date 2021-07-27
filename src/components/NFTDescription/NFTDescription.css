@@ -1,11 +1,12 @@
 .nft-description {
   display: flex;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   justify-content: space-evenly;
   flex-direction: row-reverse;
 }
 .nft-mint-details {
-  width: 100%;
+  width: 95%;
   margin: auto;
   padding: 0 3vw;
   align-items: center;
@@ -58,11 +59,17 @@
   outline: none;
   border-radius: 42px;
 }
+
 .nft-card {
   border-radius: 20px;
-  width: 31%;
+  width: 604px;
   border: 3px solid #ffe640;
   height: 804px;
+}
+.nft-card img {
+  border-radius: 20px;
+  width: 600px;
+  height: 800px;
 }
 @media only screen and (max-width: 1440px) {
   .nft-description {

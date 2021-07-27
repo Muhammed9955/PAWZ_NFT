@@ -71,12 +71,12 @@ const ProductDetails = ({
         <Container>
           <Row>
             <Col lg="7" className="info">
-              <h2>Artwork Information</h2>
-              <h5>{nftDetail?.nft.name}</h5>
+              <h2 style={{ color: '#231E68' }}>Artwork Information</h2>
+              <h5 style={{ color: '#231E68' }}>{nftDetail?.nft.name}</h5>
               {/* <h6>A moment to step back.</h6> */}
               <Row>
                 <Col xl="7">
-                  <InfoText variant="secondary" size="sm">
+                  <InfoText className="nft-detail-descrition" variant="secondary" size="sm">
                     {nftDetail?.nft.description}
                   </InfoText>
                 </Col>
@@ -89,7 +89,12 @@ const ProductDetails = ({
                 </Col>
               </Row>
               <Image src={nftDetail?.nft.image} onClick={previewHandleTriggle} />
-              <PreviewImage source={[nftDetail?.nft.image]} index={0} visible={previewVisible} onHide={previewHandleTriggle} />
+              <PreviewImage
+                source={[nftDetail?.nft.image]}
+                index={0}
+                visible={previewVisible}
+                onHide={previewHandleTriggle}
+              />
             </Col>
             <Col lg="5" className="mt-5 mt-lg-0">
               <Row>

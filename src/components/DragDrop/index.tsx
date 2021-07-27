@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import './DragDrop.scss';
 import { ReactComponent as UploadArrow } from '../../assets/uploading-arrow.svg';
+import { FileInputProps } from 'Type';
+import { FileContext } from 'context';
 
-const DragDrop: React.FC = () => {
-  const [files, setFiles] = useState([]);
+interface IProps {
+  dispalyImage?: boolean;
+  defaultImage?: string;
+  setNFTImage?: any;
+  onChange?: Function;
+  setSteps?: Function;
+  nftImage?: any;
+}
 
+const DragDrop: React.FC<IProps> = ({ nftImage, setSteps, dispalyImage, defaultImage, onChange, setNFTImage }) => {
+  const { files, setFiles } = useContext(FileContext);
+  useEffect(() => {
+    setNFTImage(files[0]);
+    if (nftImage) {
+      setSteps('mint');
+    }
+  }, [files, nftImage]);
+
+  console.log(files);
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
     onDrop: acceptedFiles => {

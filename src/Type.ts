@@ -17,6 +17,7 @@ export interface ButtonProps {
   className?: string;
   gradientDir?: 'left' | 'right';
   onClick?: () => void;
+  saveChanges?: boolean;
 }
 
 export interface ToggleButtonProps {

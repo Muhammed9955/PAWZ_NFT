@@ -4,29 +4,37 @@
   align-items: center;
   color: #ffcce4;
 }
+.image-upload:hover {
+  cursor: pointer;
+}
+.video-upload:hover {
+  cursor: pointer;
+}
 .create-nfts h1 {
   margin-bottom: 5vh;
-  font-size: 84px;
+  font-size: 43px;
 }
 .image-upload,
 .video-upload {
   border: 1px solid #ffe640;
-  width: 371px;
+  width: 321px;
   border-radius: 63px;
-  height: 497px;
+  height: 447px;
   display: flex;
+  color: #ffe640 !important;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.image-upload h2,
-.video-upload h2 {
-  font-size: 84px;
+.image-upload p,
+.video-upload p {
+  font-size: 54px;
+  color: #ffe640;
 }
 .image-upload svg,
 .video-upload svg {
-  width: 176.6px;
-  height: 117.73px;
+  width: 126.6px;
+  height: 87.73px;
 }
 .multi-media {
   width: 100%;

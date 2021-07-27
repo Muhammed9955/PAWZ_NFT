@@ -14,11 +14,14 @@ export const Button = ({
   className,
   gradientDir,
   onClick,
+  saveChanges,
 }: ButtonProps) => {
   return (
     <BootstrapButton
       disabled={isLoading}
-      className={`button click-effect ${className} ${gradientDir ? gradientDir + '-gradient' : ''}`}
+      className={`${saveChanges && 'save-changes-btn'} button click-effect ${className} ${
+        gradientDir ? gradientDir + '-gradient' : ''
+      }`}
       type={type}
       variant={variant}
       onClick={() => onClick && onClick()}

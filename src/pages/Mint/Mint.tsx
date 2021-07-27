@@ -9,14 +9,14 @@ const Mint: React.FC = () => {
   const [state, setstate] = useState<string>('upload');
   return (
     <div className="mint-page">
-      <Stepper state={state} />
+      {/* <Stepper state={state} />
       {state === 'upload' ? (
         <DragDrop />
       ) : state === 'mint' ? (
         <NFTDescription setstate={setstate} />
       ) : (
         state === 'list' && <List setstate={setstate} />
-      )}
+      )} */}
     </div>
   );
 };
